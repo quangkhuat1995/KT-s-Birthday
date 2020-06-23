@@ -1,0 +1,43 @@
+.hpbd {
+  margin-top: 50px;
+  font-family: "Bad Script", cursive;
+  h1 {
+    @include styleText(#111, 3em, 700, center);
+    @include displayFlex();
+    .space {
+      padding: 0 0.5rem;
+    }
+    span {
+      display: table-cell;
+      margin: 0;
+      padding: 0;
+      &.space {
+        padding: 0 0.5rem;
+        animation: none !important;
+      }
+      animation: animateText 4.75s linear infinite;
+      @include child(20);
+    }
+  }
+}
+@keyframes animateText {
+  0%,
+  100% {
+    color: #fff;
+    filter: blur(2px);
+    // text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff,
+    //   0 0 40px #00b3ff, 0 0 60px #00b3ff, 0 0 80px #00b3ff, 0 0 100px #00b3ff,
+    //   0 0 120px #00b3ff, 0 0 140px #00b3ff, 0 0 160px #00b3ff, 0 0 180px #00b3ff,
+    //   0 0 200px #00b3ff, 0 0 220px #00b3ff, 0 0 250px #00b3ff,
+    //   0 0 3000px #00b3ff, 0 0 400px #00b3ff, 0 0 500px #00b3ff,
+    //   0 0 600px #00b3ff, 0 0 700px #00b3ff;
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff,
+      0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+  }
+  5%,
+  95% {
+    color: #111;
+    filter: blur(0px);
+    text-shadow: none;
+  }
+}

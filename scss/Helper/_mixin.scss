@@ -1,0 +1,19 @@
+@mixin displayFlex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin styleText($color, $fs, $fw: 400, $textAlign: left) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+  text-align: $textAlign;
+}
+@mixin child($childNum) {
+  @for $i from -1 to $childNum {
+    &:nth-child(#{$i}) {
+      animation-delay: #{($i - 1) * 0.25}s;
+    }
+  }
+}
